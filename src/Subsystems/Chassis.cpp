@@ -47,3 +47,6 @@ void Chassis::InitDefaultCommand() {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
+void Chassis::MecanumDrive_Cartesian(float x, float y, float rotation, float gyro) {
+	MecanumDrive_Cartesian(x, y, rotation, gyro);
+}
