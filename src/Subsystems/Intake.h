@@ -42,6 +42,10 @@ public:
 
 	void SetActuator(ActuatorValue value);
 
+	//..........IntakeWheels..........
+
+	void SetIntake(double speed);
+
 };
 
 #endif
