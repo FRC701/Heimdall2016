@@ -1,39 +1,40 @@
-#include "SetHaySqueeze.h"
+#include "ToggleHaySqueeze.h"
 
-SetHaySqueeze::SetHaySqueeze(Elevator::HaySqueezeValue value)
-: mValue(value)
+ToggleHaySqueeze::ToggleHaySqueeze()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
 }
 
 // Called just before this Command runs the first time
-void SetHaySqueeze::Initialize()
+void ToggleHaySqueeze::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void SetHaySqueeze::Execute()
+void ToggleHaySqueeze::Execute()
 {
-Robot::elevator->SetHaySqueeze(mValue);
+	Elevator::HaySqueezeValue value
+			= Robot::elevator->IsHaySqueezeOpen() ? Elevator::kOpen : Elevator::kClose;
+		Robot::elevator->SetHaySqueeze(value);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool SetHaySqueeze::IsFinished()
+bool ToggleHaySqueeze::IsFinished()
 {
-	return Robot::elevator->IsHaySqueezeOpen();
+	return true;
 }
 
 // Called once after isFinished returns true
-void SetHaySqueeze::End()
+void ToggleHaySqueeze::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void SetHaySqueeze::Interrupted()
+void ToggleHaySqueeze::Interrupted()
 {
 
 }
