@@ -76,11 +76,11 @@ OI::OI() {
     dButtonStart.reset(new JoystickButton(driver.get(), kButtonStart_ID));
     dButtonStart->WhileHeld(new AutonomousCommand());
     dButtonBack.reset(new JoystickButton(driver.get(), kButtonBack_ID));
-    dButtonBack->WhileHeld(new AutonomousCommand());
+    dButtonBack->WhenPressed(new ToggleHaySqueeze());
     dButtonRB.reset(new JoystickButton(driver.get(), kButtonRB_ID));
-    dButtonRB->WhileHeld(new AutonomousCommand());
+    dButtonRB->WhenPressed(new ToggleBrake());
     dButtonLB.reset(new JoystickButton(driver.get(), kButtonLB_ID));
-    dButtonLB->WhileHeld(new AutonomousCommand());
+    dButtonLB->WhenPressed(new ToggleActuator());
     dButtonY.reset(new JoystickButton(driver.get(), kButtonY_ID));
     dButtonY->WhileHeld(new AutonomousCommand());
     dButtonX.reset(new JoystickButton(driver.get(), kButtonX_ID));

@@ -17,7 +17,7 @@ void ToggleActuator::Initialize()
 void ToggleActuator::Execute()
 {
 	Intake::ActuatorValue value
-		= Robot::intake->IsActuatorClosed() ?  Intake::kActuatorClosed : Intake::kAcuatorOpen;
+		= Robot::intake->IsActuatorClosed() ?  Intake::kAcuatorOpen : Intake::kActuatorClosed;
 	Robot::intake->SetActuator(value);
 
 }

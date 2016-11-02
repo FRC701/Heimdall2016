@@ -17,8 +17,9 @@ void ToggleHaySqueeze::Initialize()
 void ToggleHaySqueeze::Execute()
 {
 	Elevator::HaySqueezeValue value
-			= Robot::elevator->IsHaySqueezeOpen() ? Elevator::kOpen : Elevator::kClose;
+			= Robot::elevator->IsHaySqueezeOpen() ? Elevator::kClose : Elevator::kOpen;
 		Robot::elevator->SetHaySqueeze(value);
+
 }
 
 // Make this return true when this Command no longer needs to run execute()
