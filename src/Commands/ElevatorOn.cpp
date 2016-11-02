@@ -1,7 +1,6 @@
 #include "ElevatorOn.h"
 
-ElevatorOn::ElevatorOn(double speed)
-: mSpeed(speed)
+ElevatorOn::ElevatorOn()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
@@ -18,7 +17,7 @@ void ElevatorOn::Initialize()
 void ElevatorOn::Execute()
 {
 	//TODO set this to trigger axis
-	Robot::elevator->SetSpool(mSpeed);
+	Robot::elevator->SetSpool(Robot::oi->getcoDriver()->GetRawAxis(3));
 }
 
 // Make this return true when this Command no longer needs to run execute()

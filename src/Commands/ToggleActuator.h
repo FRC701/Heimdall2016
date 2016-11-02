@@ -1,5 +1,5 @@
-#ifndef ToggleBrake_H
-#define ToggleBrake_H
+#ifndef ToggleActuator_H
+#define ToggleActuator_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"

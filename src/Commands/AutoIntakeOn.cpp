@@ -1,6 +1,7 @@
-#include "ToggleActuator.h"
+#include "AutoIntakeOn.h"
 
-ToggleActuator::ToggleActuator()
+AutoIntakeOn::AutoIntakeOn(double speed)
+: mSpeed(speed)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
@@ -8,35 +9,33 @@ ToggleActuator::ToggleActuator()
 }
 
 // Called just before this Command runs the first time
-void ToggleActuator::Initialize()
+void AutoIntakeOn::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void ToggleActuator::Execute()
+void AutoIntakeOn::Execute()
 {
-	Intake::ActuatorValue value
-		= Robot::intake->IsActuatorClosed() ?  Intake::kActuatorClosed : Intake::kAcuatorOpen;
-	Robot::intake->SetActuator(value);
-
+	//TODO set this to a axis of some point
+		Robot::intake->SetIntake(mSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool ToggleActuator::IsFinished()
+bool AutoIntakeOn::IsFinished()
 {
-	return true;
+	return false;
 }
 
 // Called once after isFinished returns true
-void ToggleActuator::End()
+void AutoIntakeOn::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void ToggleActuator::Interrupted()
+void AutoIntakeOn::Interrupted()
 {
 
 }

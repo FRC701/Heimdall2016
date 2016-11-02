@@ -10,7 +10,7 @@
 
 #include "Elevator.h"
 #include "../RobotMap.h"
-#include "../Commands/ElevatorOn.h"
+#include "../Commands/AutoElevatorOn.h"
 
 Elevator::Elevator() : Subsystem("Elevator") {
     haySqueeze = RobotMap::elevatorHaySqueeze;
@@ -25,12 +25,10 @@ Elevator::Elevator() : Subsystem("Elevator") {
     SetBrake(Elevator::kBrake);
 }
 
-//TODO invert rightSpool?
-
 void Elevator::InitDefaultCommand() {
     // Set the default command for a subsystem here.
     // SetDefaultCommand(new MySpecialCommand());
-	SetDefaultCommand(new ElevatorOn(0.0));
+	SetDefaultCommand(new AutoElevatorOn(0.0));
 }
 
 // Put methods for controlling this subsystem
@@ -55,6 +53,11 @@ bool Elevator::IsBrakeOn()
 bool Elevator::IsHaySqueezeOpen()
 {
 	return leftHaySqueezeSensor->Get() || rightHaySqueezeSensor->Get();
+}
+
+bool Elevator::IsHaySqueezeClosed()
+{
+	return !( leftHaySqueezeSensor->Get() || rightHaySqueezeSensor->Get() );
 }
 
 void Elevator::SetHaySqueeze(HaySqueezeValue value)

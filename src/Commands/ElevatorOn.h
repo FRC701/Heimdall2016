@@ -7,15 +7,12 @@
 class ElevatorOn: public Command
 {
 public:
-	ElevatorOn(double speed);
+	ElevatorOn();
 	void Initialize();
 	void Execute();
 	bool IsFinished();
 	void End();
 	void Interrupted();
-
-private:
-	double mSpeed;
 };
 
 #endif

@@ -25,6 +25,8 @@ OI::OI() {
     
 	coDriver.reset(new Joystick(1));
 
+
+
     coLGreen.reset(new JoystickButton(coDriver.get(), kLGreen_ID));
     coLGreen->WhileHeld(new AutonomousCommand());
     coLRed.reset(new JoystickButton(coDriver.get(), kLRed_ID));
@@ -43,6 +45,8 @@ OI::OI() {
     coRRed->WhileHeld(new AutonomousCommand());
     coRYellow.reset(new JoystickButton(coDriver.get(), kRYellow_ID));
     coRYellow->WhileHeld(new AutonomousCommand());
+
+    /*
     coButtonStart.reset(new JoystickButton(coDriver.get(), kButtonStart_ID));
     coButtonStart->WhileHeld(new AutonomousCommand());
     coButtonBack.reset(new JoystickButton(coDriver.get(), kButtonBack_ID));
@@ -59,6 +63,7 @@ OI::OI() {
     coButtonB->WhileHeld(new AutonomousCommand());
     coButtonA.reset(new JoystickButton(coDriver.get(), kButtonA_ID));
     coButtonA->WhileHeld(new AutonomousCommand());
+    */
 
 
     driver.reset(new Joystick(0));

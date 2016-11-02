@@ -1,19 +1,20 @@
-#ifndef SetActuator_H
-#define SetActuator_H
+#ifndef AutoIntakeOn_H
+#define AutoIntakeOn_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
-class SetActuator: public Command
+class AutoIntakeOn: public Command
 {
 public:
-	SetActuator(Intake::ActuatorValue value);
+	AutoIntakeOn(double speed);
 	void Initialize();
 	void Execute();
 	bool IsFinished();
 	void End();
 	void Interrupted();
-Intake::ActuatorValue mValue;
+private:
+	double mSpeed;
 };
 
 #endif
