@@ -1,42 +1,41 @@
-#include "ToggleActuator.h"
+#include "AutoElevatorOn.h"
 
-ToggleActuator::ToggleActuator()
+AutoElevatorOn::AutoElevatorOn(double speed)
+: mSpeed(speed)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
-	Requires(Robot::intake.get());
+	Requires(Robot::elevator.get());
 }
 
 // Called just before this Command runs the first time
-void ToggleActuator::Initialize()
+void AutoElevatorOn::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void ToggleActuator::Execute()
+void AutoElevatorOn::Execute()
 {
-	Intake::ActuatorValue value
-		= Robot::intake->IsActuatorClosed() ?  Intake::kActuatorClosed : Intake::kAcuatorOpen;
-	Robot::intake->SetActuator(value);
-
+	//TODO set this to trigger axis
+	Robot::elevator->SetSpool(mSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool ToggleActuator::IsFinished()
+bool AutoElevatorOn::IsFinished()
 {
-	return true;
+	return false;
 }
 
 // Called once after isFinished returns true
-void ToggleActuator::End()
+void AutoElevatorOn::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void ToggleActuator::Interrupted()
+void AutoElevatorOn::Interrupted()
 {
 
 }

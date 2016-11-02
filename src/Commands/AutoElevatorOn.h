@@ -1,19 +1,21 @@
-#ifndef SetActuator_H
-#define SetActuator_H
+#ifndef AutoElevatorOn_H
+#define AutoElevatorOn_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
-class SetActuator: public Command
+class AutoElevatorOn: public Command
 {
 public:
-	SetActuator(Intake::ActuatorValue value);
+	AutoElevatorOn(double speed);
 	void Initialize();
 	void Execute();
 	bool IsFinished();
 	void End();
 	void Interrupted();
-Intake::ActuatorValue mValue;
+
+private:
+	double mSpeed;
 };
 
 #endif

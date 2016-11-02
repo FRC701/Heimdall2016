@@ -4,6 +4,7 @@ ToggleBrake::ToggleBrake()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::elevator.get());
 }
 
 // Called just before this Command runs the first time

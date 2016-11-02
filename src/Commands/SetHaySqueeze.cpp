@@ -5,6 +5,7 @@ SetHaySqueeze::SetHaySqueeze(Elevator::HaySqueezeValue value)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::elevator.get());
 }
 
 // Called just before this Command runs the first time
@@ -22,7 +23,10 @@ Robot::elevator->SetHaySqueeze(mValue);
 // Make this return true when this Command no longer needs to run execute()
 bool SetHaySqueeze::IsFinished()
 {
-	return Robot::elevator->IsHaySqueezeOpen();
+	if(mValue == Elevator::kOpen)
+		return Robot::elevator->IsHaySqueezeOpen();
+	else
+		return Robot::elevator->IsHaySqueezeClosed();
 }
 
 // Called once after isFinished returns true
