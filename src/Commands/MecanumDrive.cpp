@@ -32,11 +32,13 @@ void MecanumDrive::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void MecanumDrive::Execute() {
 
-	Robot::chassis->MecanumDrive_Cartesian(Robot::oi->getdriver()->GetRawAxis(0),
+	Robot::chassis->SetTank(Robot::oi->getdriver()->GetRawAxis(1), Robot::oi->getdriver()->GetRawAxis(5));
+
+	/*MecanumDrive_Cartesian(Robot::oi->getdriver()->GetRawAxis(0),
 										   Robot::oi->getdriver()->GetRawAxis(1),
 										   Robot::oi->getdriver()->GetRawAxis(4),
 										   Robot::oi->getdriver()->GetRawAxis(5));
-
+*/
 }
 
 // Make this return true when this Command no longer needs to run execute()
