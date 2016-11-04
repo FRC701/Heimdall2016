@@ -1,5 +1,5 @@
-#ifndef SetBrake_H
-#define SetBrake_H
+#ifndef SetActuator_H
+#define SetActuator_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
