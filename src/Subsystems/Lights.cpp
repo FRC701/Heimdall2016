@@ -9,6 +9,7 @@
 // it from being updated in the future.
 #include "Lights.h"
 #include "../RobotMap.h"
+#include "../Commands/LightsOn.h"
 
 
 Lights::Lights() : Subsystem("Lights") {
@@ -25,6 +26,7 @@ Lights::Lights() : Subsystem("Lights") {
 void Lights::InitDefaultCommand() {
     // Set the default command for a subsystem here.
     // SetDefaultCommand(new MySpecialCommand());
+	SetDefaultCommand(new LightsOn());
 
 }
 

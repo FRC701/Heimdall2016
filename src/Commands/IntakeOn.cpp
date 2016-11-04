@@ -1,6 +1,7 @@
 #include "IntakeOn.h"
 
-IntakeOn::IntakeOn()
+IntakeOn::IntakeOn(double speed)
+: mSpeed(speed)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
@@ -17,11 +18,7 @@ void IntakeOn::Initialize()
 void IntakeOn::Execute()
 {
 	//TODO set this to a axis of some point
-
-	if(Robot::oi->getcoDriver()->GetRawAxis(1) >= 0.1)
-		Robot::intake->SetIntake(Robot::oi->getcoDriver()->GetRawAxis(1));
-	else if(Robot::oi->getcoDriver()->GetRawAxis(2) >= 0.1)
-		Robot::intake->SetIntake( -(Robot::oi->getcoDriver()->GetRawAxis(2)) );
+	Robot::intake->SetIntake(mSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()

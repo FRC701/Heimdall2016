@@ -10,7 +10,7 @@
 
 #include "Elevator.h"
 #include "../RobotMap.h"
-#include "../Commands/AutoElevatorOn.h"
+#include "../Commands/ElevatorOn.h"
 
 Elevator::Elevator() : Subsystem("Elevator") {
     haySqueeze = RobotMap::elevatorHaySqueeze;
@@ -28,7 +28,7 @@ Elevator::Elevator() : Subsystem("Elevator") {
 void Elevator::InitDefaultCommand() {
     // Set the default command for a subsystem here.
     // SetDefaultCommand(new MySpecialCommand());
-	SetDefaultCommand(new AutoElevatorOn(0.0));
+	SetDefaultCommand(new ElevatorOn(0.0));
 }
 
 // Put methods for controlling this subsystem
