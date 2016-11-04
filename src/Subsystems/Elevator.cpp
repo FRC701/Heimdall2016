@@ -20,7 +20,7 @@ Elevator::Elevator() : Subsystem("Elevator") {
     leftSpool = RobotMap::elevatorLeftSpool;
     rightSpool = RobotMap::elevatorRightSpool;
 
-    rightSpool->SetInverted(true);
+// already done in wiring //    rightSpool->SetInverted(true);
 
     SetBrake(Elevator::kBrake);
 }
@@ -52,7 +52,7 @@ bool Elevator::IsBrakeOn()
 
 bool Elevator::IsHaySqueezeOpen()
 {
-	return leftHaySqueezeSensor->Get() || rightHaySqueezeSensor->Get();
+	//if(haySqueeze->Get(); = Elevator::
 }
 
 bool Elevator::IsHaySqueezeClosed()

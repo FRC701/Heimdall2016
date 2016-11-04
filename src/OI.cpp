@@ -78,19 +78,19 @@ OI::OI() {
     dButtonStart.reset(new JoystickButton(driver.get(), kButtonStart_ID));
     dButtonStart->WhileHeld(new AutonomousCommand());
     dButtonBack.reset(new JoystickButton(driver.get(), kButtonBack_ID));
-    dButtonBack->WhenPressed(new ToggleHaySqueeze());
+    dButtonBack->WhenPressed(new AutonomousCommand());
     dButtonRB.reset(new JoystickButton(driver.get(), kButtonRB_ID));
     dButtonRB->WhenPressed(new ToggleBrake());
     dButtonLB.reset(new JoystickButton(driver.get(), kButtonLB_ID));
-    dButtonLB->WhenPressed(new ToggleActuator());
+    dButtonLB->WhenPressed(new ToggleHaySqueeze());
     dButtonY.reset(new JoystickButton(driver.get(), kButtonY_ID));
-    dButtonY->WhileHeld(new AutonomousCommand());
+    dButtonY->WhileHeld(new SetHaySqueeze(Elevator::kOpen));
     dButtonX.reset(new JoystickButton(driver.get(), kButtonX_ID));
-    dButtonX->WhileHeld(new AutonomousCommand());
+    dButtonX->WhenPressed(new ToggleActuator());
     dButtonB.reset(new JoystickButton(driver.get(), kButtonB_ID));
-    dButtonB->WhileHeld(new AutonomousCommand());
+    dButtonB->WhileHeld(new IntakeOn(1.0));
     dButtonA.reset(new JoystickButton(driver.get(), kButtonA_ID));
-    dButtonA->WhileHeld(new AutonomousCommand());
+    dButtonA->WhileHeld(new IntakeOn(-1.0));
 
     // SmartDashboard Buttons
     SmartDashboard::PutData("MecanumDrive", new MecanumDrive());

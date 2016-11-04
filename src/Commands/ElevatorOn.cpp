@@ -19,6 +19,15 @@ void ElevatorOn::Execute()
 {
 	//TODO set this to trigger axis
 	Robot::elevator->SetSpool(mSpeed);
+
+	if(Robot::oi->getdriver()->GetRawAxis(3) >= 0.25)
+		Robot::elevator->SetSpool(Robot::oi->getdriver()->GetRawAxis(3));
+
+	else if(Robot::oi->getdriver()->GetRawAxis(2) >= 0.25)
+		Robot::elevator->SetSpool( -(Robot::oi->getdriver()->GetRawAxis(2)));
+
+	else
+		Robot::elevator->SetSpool(mSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
