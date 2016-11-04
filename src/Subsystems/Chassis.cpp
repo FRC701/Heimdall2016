@@ -9,6 +9,7 @@
 // it from being updated in the future.
 #include "Chassis.h"
 #include "../RobotMap.h"
+#include"../Commands/MecanumDrive.h"
 
 
 Chassis::Chassis() : Subsystem("Chassis") {
@@ -26,7 +27,7 @@ Chassis::Chassis() : Subsystem("Chassis") {
 void Chassis::InitDefaultCommand() {
     // Set the default command for a subsystem here.
     // SetDefaultCommand(new MySpecialCommand());
-
+	SetDefaultCommand(new MecanumDrive());
 }
 
 

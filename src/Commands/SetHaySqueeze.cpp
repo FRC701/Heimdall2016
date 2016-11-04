@@ -23,10 +23,7 @@ Robot::elevator->SetHaySqueeze(mValue);
 // Make this return true when this Command no longer needs to run execute()
 bool SetHaySqueeze::IsFinished()
 {
-	if(mValue == Elevator::kOpen)
-		return Robot::elevator->IsHaySqueezeOpen();
-	else
-		return Robot::elevator->IsHaySqueezeClosed();
+	return true;
 }
 
 // Called once after isFinished returns true
