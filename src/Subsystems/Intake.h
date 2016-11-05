@@ -31,7 +31,7 @@ private:
 
 public:
 
-	enum ActuatorValue {kAcuatorOpen = DoubleSolenoid::kForward, kActuatorClosed = DoubleSolenoid::kReverse };
+	enum ActuatorValue {kActuatorOpen = DoubleSolenoid::kForward, kActuatorClosed = DoubleSolenoid::kReverse };
 
 	Intake();
 	void InitDefaultCommand();

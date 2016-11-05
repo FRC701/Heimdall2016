@@ -42,9 +42,9 @@ void Chassis::MecanumDrive_Cartesian(float x, float y, float rotation, float gyr
 
 void Chassis::SetTank(double leftSpeed, double rightSpeed)
 {
-	leftFrontWheel->Set(leftSpeed);
-	leftRearWheel->Set(leftSpeed);
-	rightFrontWheel->Set(rightSpeed);
-	rightRearWheel->Set(rightSpeed);
+	leftFrontWheel->Set(-leftSpeed);
+	leftRearWheel->Set(-leftSpeed);
+	rightFrontWheel->Set(-rightSpeed);
+	rightRearWheel->Set(-rightSpeed);
 
 }

@@ -52,6 +52,8 @@ bool Elevator::IsBrakeOn()
 
 bool Elevator::IsHaySqueezeOpen()
 {
+	return haySqueeze->Get() == static_cast<DoubleSolenoid::Value>(kOpen);
+
 	//if(haySqueeze->Get(); = Elevator::
 }
 
