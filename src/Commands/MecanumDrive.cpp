@@ -32,30 +32,7 @@ void MecanumDrive::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void MecanumDrive::Execute() {
 
-	double strafeSpeed;
-	double leftStickHorizontal= Robot::oi->getdriver()->GetRawAxis(0);
-	double rightStickHorizontal= Robot::oi->getdriver()->GetRawAxis(4);
-	double leftStickVertical = Robot::oi->getdriver()->GetRawAxis(1);
-	double rightStickVertical = Robot::oi->getdriver()->GetRawAxis(5);
-
-	//for full strafe
-	/*
-	if( (leftStickVertical >> rightStickVertical) && (leftStickVertical >> .2) )
-		strafeSpeed = leftStickVertical;
-
-	else if( (leftStickVertical >> rightStickVertical) && (leftStickVertical >> .2) )
-		strafeSpeed = rightStickVertical;
-
-	else
-		strafeSpeed = 0.0;
-		*/
-
-	//for half strafe per joystick
-
-
-
-	Robot::chassis->SetTank(leftStickVertical, rightStickVertical);
-//	Robot::chassis->SetStrafe(leftStickHorizontal, rightStickHorizontal);
+	Robot::chassis->SetTank(Robot::oi->getdriver()->GetRawAxis(1), Robot::oi->getdriver()->GetRawAxis(5));
 
 	/*MecanumDrive_Cartesian(Robot::oi->getdriver()->GetRawAxis(0),
 										   Robot::oi->getdriver()->GetRawAxis(1),
