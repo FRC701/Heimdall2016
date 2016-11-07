@@ -20,6 +20,11 @@ Chassis::Chassis() : Subsystem("Chassis") {
     rightFrontWheel = RobotMap::chassisRightFrontWheel;
     rightRearWheel = RobotMap::chassisRightRearWheel;
 
+    //so that when they are all given +volts they move forward
+    leftFrontWheel->SetInverted(true);
+    leftRearWheel->SetInverted(true);
+    rightFrontWheel->SetInverted(true);
+    rightRearWheel->SetInverted(true);
 
 
 }
@@ -47,4 +52,12 @@ void Chassis::SetTank(double leftSpeed, double rightSpeed)
 	rightFrontWheel->Set(-rightSpeed);
 	rightRearWheel->Set(-rightSpeed);
 
+}
+
+void Chassis::SetStrafe(double frontSpeed, double rearSpeed)
+{
+	leftFrontWheel->Set(frontSpeed);
+	leftRearWheel->Set(rearSpeed);
+	rightFrontWheel->Set(frontSpeed);
+	rightRearWheel->Set(rearSpeed);
 }

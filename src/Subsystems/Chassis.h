@@ -41,6 +41,7 @@ public:
 	void MecanumDrive_Cartesian(float x, float y, float rotation, float gyro);
 
 	void SetTank(double leftSpeed, double rightSpeed);
+	void SetStrafe(double frontSpeed, double rearSpeed);
 };
 
 #endif
