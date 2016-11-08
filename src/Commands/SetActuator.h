@@ -13,7 +13,9 @@ public:
 	bool IsFinished();
 	void End();
 	void Interrupted();
-Intake::ActuatorValue mValue;
+
+private:
+	Intake::ActuatorValue mValue;
 };
 
 #endif
