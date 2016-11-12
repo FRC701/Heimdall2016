@@ -1,39 +1,42 @@
-#include "IntakeIn.h"
+#include "ToggleActuator.h"
 
-IntakeIn::IntakeIn()
+ToggleActuator::ToggleActuator()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::intake.get());
 }
 
 // Called just before this Command runs the first time
-void IntakeIn::Initialize()
+void ToggleActuator::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void IntakeIn::Execute()
+void ToggleActuator::Execute()
 {
-	Robot::intake->leftSpinner->Set(0.5);
-	Robot::intake->rightSpinner->Set(0.5);
+	Intake::ActuatorValue value
+		= Robot::intake->IsActuatorClosed() ?  Intake::kActuatorOpen : Intake::kActuatorClosed;
+	Robot::intake->SetActuator(value);
+
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool IntakeIn::IsFinished()
+bool ToggleActuator::IsFinished()
 {
-	return false;
+	return true;
 }
 
 // Called once after isFinished returns true
-void IntakeIn::End()
+void ToggleActuator::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void IntakeIn::Interrupted()
+void ToggleActuator::Interrupted()
 {
 
 }

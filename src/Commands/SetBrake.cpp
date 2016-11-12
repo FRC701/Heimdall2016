@@ -1,38 +1,40 @@
-#include "ElevatorDown.h"
+#include "SetBrake.h"
 
-ElevatorDown::ElevatorDown()
+SetBrake::SetBrake(Elevator::BrakeValue value)
+: mValue(value)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::elevator.get());
 }
 
 // Called just before this Command runs the first time
-void ElevatorDown::Initialize()
+void SetBrake::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void ElevatorDown::Execute()
+void SetBrake::Execute()
 {
-	Robot::elevator->SetSpool(-0.5, -0.5);
+	Robot::elevator->SetBrake(mValue);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool ElevatorDown::IsFinished()
+bool SetBrake::IsFinished()
 {
-	return false;
+	return true;
 }
 
 // Called once after isFinished returns true
-void ElevatorDown::End()
+void SetBrake::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void ElevatorDown::Interrupted()
+void SetBrake::Interrupted()
 {
 
 }

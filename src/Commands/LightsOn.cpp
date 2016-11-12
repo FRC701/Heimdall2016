@@ -1,40 +1,38 @@
-#include "IntakeOut.h"
-#include "../Robot.h"
+#include "LightsOn.h"
 
-IntakeOut::IntakeOut()
+LightsOn::LightsOn()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
 }
 
 // Called just before this Command runs the first time
-void IntakeOut::Initialize()
+void LightsOn::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void IntakeOut::Execute()
+void LightsOn::Execute()
 {
-	Robot::intake->leftSpinner->Set(0.5);
-	Robot::intake->rightSpinner->Set(0.5);
+Robot::lights->LightOn();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool IntakeOut::IsFinished()
+bool LightsOn::IsFinished()
 {
 	return false;
 }
 
 // Called once after isFinished returns true
-void IntakeOut::End()
+void LightsOn::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void IntakeOut::Interrupted()
+void LightsOn::Interrupted()
 {
 
 }

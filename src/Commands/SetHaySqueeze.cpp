@@ -1,40 +1,40 @@
-#include "ElevatorUp.h"
-#include "../Robot.h"
+#include "SetHaySqueeze.h"
 
-ElevatorUp::ElevatorUp()
+SetHaySqueeze::SetHaySqueeze(Elevator::HaySqueezeValue value)
+: mValue(value)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::elevator.get());
 }
 
 // Called just before this Command runs the first time
-void ElevatorUp::Initialize()
+void SetHaySqueeze::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void ElevatorUp::Execute()
+void SetHaySqueeze::Execute()
 {
-	Robot::elevator->SetSpool(0.5, 0.5);
+Robot::elevator->SetHaySqueeze(mValue);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool ElevatorUp::IsFinished()
+bool SetHaySqueeze::IsFinished()
 {
-	return false;
+	return true;
 }
 
 // Called once after isFinished returns true
-void ElevatorUp::End()
+void SetHaySqueeze::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void ElevatorUp::Interrupted()
+void SetHaySqueeze::Interrupted()
 {
 
 }
-

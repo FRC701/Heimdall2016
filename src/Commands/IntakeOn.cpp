@@ -1,49 +1,41 @@
-#include "IntakeOpenClose.h"
+#include "IntakeOn.h"
 
-IntakeOpenClose::IntakeOpenClose()
+IntakeOn::IntakeOn(double speed)
+: mSpeed(speed)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::intake.get());
 }
 
 // Called just before this Command runs the first time
-void IntakeOpenClose::Initialize()
+void IntakeOn::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void IntakeOpenClose::Execute()
+void IntakeOn::Execute()
 {
-
-	if(Robot::intake->actuator->Get() == DoubleSolenoid::kForward)
-	{
-		Robot::intake->actuator->Set(DoubleSolenoid::kReverse);
-
-	}
-
-	else
-	{
-		Robot::intake->actuator->Set(DoubleSolenoid::kForward);
-
-	}
+	//TODO set this to a axis of some point
+	Robot::intake->SetIntake(mSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool IntakeOpenClose::IsFinished()
+bool IntakeOn::IsFinished()
 {
 	return false;
 }
 
 // Called once after isFinished returns true
-void IntakeOpenClose::End()
+void IntakeOn::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void IntakeOpenClose::Interrupted()
+void IntakeOn::Interrupted()
 {
 
 }
