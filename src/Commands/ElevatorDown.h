@@ -1,13 +1,13 @@
-#ifndef LightsOn_H
-#define LightsOn_H
+#ifndef ElevatorDown_H
+#define ElevatorDown_H
 
-#include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "WPILib.h"
 
-class LightsOn: public Command
+class ElevatorDown: public Command
 {
 public:
-	LightsOn();
+	ElevatorDown();
 	void Initialize();
 	void Execute();
 	bool IsFinished();
