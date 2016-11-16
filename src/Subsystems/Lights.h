@@ -18,9 +18,12 @@ private:
 	std::shared_ptr<Relay> rightUnderGlow;
 
 public:
+
+	enum LightValue {kLightOn = DoubleSolenoid::kForward, kLightOff = DoubleSolenoid::kOff };
+
 	Lights();
 	void InitDefaultCommand();
-	void LightOn();
+	void LightOn(LightValue value);
 };
 
 #endif

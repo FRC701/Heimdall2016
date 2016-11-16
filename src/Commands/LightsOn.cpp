@@ -1,6 +1,7 @@
 #include "LightsOn.h"
 
-LightsOn::LightsOn()
+LightsOn::LightsOn(Lights::LightValue value)
+: mValue(value)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
@@ -15,7 +16,7 @@ void LightsOn::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void LightsOn::Execute()
 {
-Robot::lights->LightOn();
+Robot::lights->LightOn(mValue);
 }
 
 // Make this return true when this Command no longer needs to run execute()
