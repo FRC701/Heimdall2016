@@ -1,7 +1,7 @@
 #ifndef ToggleActuator_H
 #define ToggleActuator_H
 
-#include "Commands/Subsystem.h"
+#include "Commands/Command.h"
 #include "../Robot.h"
 
 class ToggleActuator: public Command

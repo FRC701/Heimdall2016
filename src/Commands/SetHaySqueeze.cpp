@@ -17,7 +17,7 @@ void SetHaySqueeze::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void SetHaySqueeze::Execute()
 {
-Robot::elevator->SetHaySqueeze(mValue);
+	Robot::elevator->SetHaySqueeze(mValue);
 }
 
 // Make this return true when this Command no longer needs to run execute()

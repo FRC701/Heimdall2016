@@ -1,7 +1,7 @@
 #ifndef ToggleBrake_H
 #define ToggleBrake_H
 
-#include "Commands/Subsystem.h"
+#include "Commands/Command.h"
 #include "../Robot.h"
 
 class ToggleBrake: public Command

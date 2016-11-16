@@ -1,7 +1,7 @@
 #ifndef ToggleHaySqueeze_H
 #define ToggleHaySqueeze_H
 
-#include "Commands/Subsystem.h"
+#include "Commands/Command.h"
 #include "../Robot.h"
 
 class ToggleHaySqueeze: public Command

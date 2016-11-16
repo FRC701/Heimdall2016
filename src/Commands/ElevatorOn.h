@@ -1,7 +1,7 @@
 #ifndef ElevatorOn_H
 #define ElevatorOn_H
 
-#include "Commands/Subsystem.h"
+#include "Commands/Command.h"
 #include "../Robot.h"
 
 class ElevatorOn: public Command

@@ -1,7 +1,7 @@
 #ifndef SetHaySqueeze_H
 #define SetHaySqueeze_H
 
-#include "Commands/Subsystem.h"
+#include "Commands/Command.h"
 #include "../Robot.h"
 
 class SetHaySqueeze: public Command

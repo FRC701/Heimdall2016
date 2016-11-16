@@ -1,7 +1,7 @@
 #ifndef SetBrake_H
 #define SetBrake_H
 
-#include "Commands/Subsystem.h"
+#include "Commands/Command.h"
 #include "../Robot.h"
 
 class SetBrake: public Command
