@@ -27,7 +27,7 @@ public:
 
 	//...........Actuator..........
 
-	bool IsActuatorClosed();
+	bool IsActuatorClosed() const;
 
 	void SetActuator(ActuatorValue value);
 

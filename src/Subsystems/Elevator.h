@@ -32,13 +32,13 @@ public:
 
 	void SetBrake(BrakeValue value);
 
-	bool IsBrakeOn();
+	bool IsBrakeOn() const;
 
 	//...........haysqueeze..........
 
-	bool IsHaySqueezeOpen();
+	bool IsHaySqueezeOpen() const;
 
-	bool IsHaySqueezeClosed();
+	bool IsHaySqueezeClosed() const;
 
 	void SetHaySqueeze(HaySqueezeValue value);
 

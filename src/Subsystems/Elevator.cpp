@@ -35,17 +35,17 @@ void Elevator::SetBrake(BrakeValue value)
 	brake->Set(static_cast<DoubleSolenoid::Value>(value));
 }
 
-bool Elevator::IsBrakeOn()
+bool Elevator::IsBrakeOn () const
 {
 	return brake->Get() == static_cast<DoubleSolenoid::Value>(kBrake);
 }
 
-bool Elevator::IsHaySqueezeOpen()
+bool Elevator::IsHaySqueezeOpen() const
 {
 	return haySqueeze->Get() == static_cast<DoubleSolenoid::Value>(kOpen);
 }
 
-bool Elevator::IsHaySqueezeClosed()
+bool Elevator::IsHaySqueezeClosed() const
 {
 	return !( leftHaySqueezeSensor->Get() || rightHaySqueezeSensor->Get() );
 }

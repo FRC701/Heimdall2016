@@ -19,7 +19,7 @@ void Intake::InitDefaultCommand() {
 
 }
 
-bool Intake::IsActuatorClosed(){
+bool Intake::IsActuatorClosed() const {
 
 return actuator->Get() == static_cast<DoubleSolenoid::Value>(kActuatorClosed);
 
