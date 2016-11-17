@@ -33,6 +33,10 @@ public:
 
 //..........Solenoids..........
 
+	//..........PCMID..........
+
+	static const int kPCM_ID = 0;
+
 	//..........elevator..........
 
 	static std::shared_ptr<DoubleSolenoid> elevatorHaySqueeze;

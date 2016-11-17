@@ -39,6 +39,13 @@ public:
 	std::shared_ptr<Joystick> getdriver();
 	std::shared_ptr<Joystick> getcoDriver();
 
+//.........Driver/CodriverIds..........
+
+	static const int kDriver_ID = 0;
+	static const int kCoDriver_ID = 1;
+
+//..........XboxControllerbuttons..........
+
 	static const int kButtonA_ID = 1;
 	static const int kButtonB_ID = 2;
 	static const int kButtonX_ID = 3;
@@ -49,6 +56,8 @@ public:
 	static const int kButtonStart_ID = 8;
 	static const int kButtonL3_ID = 9;
 	static const int kButtonR3_ID = 10;
+
+//..........CodriverBoxButtons..........
 
 	static const int kLGreen_ID = 15;
 	static const int kLRed_ID = 12;

@@ -16,7 +16,7 @@ OI::OI() {
     // Process operator interface input here.
 
  //TODO find out and replace all old button controls
-	coDriver.reset(new Joystick(1));
+	coDriver.reset(new Joystick(kCoDriver_ID));
 
 
 //	/*
@@ -61,7 +61,7 @@ OI::OI() {
     */
 
 
-    driver.reset(new Joystick(0));
+    driver.reset(new Joystick(kDriver_ID));
     
     dButtonStart.reset(new JoystickButton(driver.get(), kButtonStart_ID));
     dButtonStart->WhileHeld(new AutonomousCommand());

@@ -5,6 +5,7 @@ LightsOn::LightsOn(Lights::LightValue value)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::lights.get());
 }
 
 // Called just before this Command runs the first time

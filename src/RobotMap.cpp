@@ -62,15 +62,15 @@ void RobotMap::init() {
 
     //..........elevator..........
 
-    elevatorHaySqueeze.reset(new DoubleSolenoid(0, kHaySqueezeF, kHaySqueezeR));
+    elevatorHaySqueeze.reset(new DoubleSolenoid(kPCM_ID, kHaySqueezeF, kHaySqueezeR));
     lw->AddActuator("Elevator", "haySqueeze", elevatorHaySqueeze);
 
-    elevatorBrake.reset(new DoubleSolenoid(0, kBrakeF, kBrakeR));
+    elevatorBrake.reset(new DoubleSolenoid(kPCM_ID, kBrakeF, kBrakeR));
     lw->AddActuator("Elevator", "brake", elevatorBrake);
 
     //..........intake..........
 
-    intakeActuator.reset(new DoubleSolenoid(0, kActuatorF, kActuatorR));
+    intakeActuator.reset(new DoubleSolenoid(kPCM_ID, kActuatorF, kActuatorR));
     lw->AddActuator("Intake", "actuator", intakeActuator);
 
 //..........sensors..........
