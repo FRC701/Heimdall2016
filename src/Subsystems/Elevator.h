@@ -1,7 +1,10 @@
 #ifndef ELEVATOR_H
 #define ELEVATOR_H
 #include "Commands/Subsystem.h"
-#include "WPILib.h"
+#include "CANTalon.h"
+#include "DigitalInput.h"
+#include "DoubleSolenoid.h"
+//#include "WPILib.h"
 
 /**
  *

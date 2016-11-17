@@ -1,7 +1,9 @@
 #ifndef INTAKE_H
 #define INTAKE_H
 #include "Commands/Subsystem.h"
-#include "WPILib.h"
+#include "CANTalon.h"
+#include "DoubleSolenoid.h"
+//#include "WPILib.h"
 
 /**
  *

@@ -1,4 +1,5 @@
 #include "ToggleBrake.h"
+#include "../Robot.h"
 
 ToggleBrake::ToggleBrake()
 {
@@ -18,7 +19,7 @@ void ToggleBrake::Execute()
 {
 	Elevator::BrakeValue value
 			= Robot::elevator->IsBrakeOn() ? Elevator::kBrakeOff : Elevator::kBrake;
-		Robot::elevator->SetBrake(value);
+  Robot::elevator->SetBrake(value);
 }
 
 // Make this return true when this Command no longer needs to run execute()

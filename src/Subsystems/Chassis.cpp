@@ -5,19 +5,19 @@
 
 Chassis::Chassis() : Subsystem("Chassis") {
 	leftLightSensor = RobotMap::chassisLeftLightSensor;
-    rightLightSensor = RobotMap::chassisRightLightSensor;
-    leftFrontWheel = RobotMap::chassisLeftFrontWheel;
-    leftRearWheel = RobotMap::chassisLeftRearWheel;
-    rightFrontWheel = RobotMap::chassisRightFrontWheel;
-    rightRearWheel = RobotMap::chassisRightRearWheel;
+  rightLightSensor = RobotMap::chassisRightLightSensor;
+  leftFrontWheel = RobotMap::chassisLeftFrontWheel;
+  leftRearWheel = RobotMap::chassisLeftRearWheel;
+  rightFrontWheel = RobotMap::chassisRightFrontWheel;
+  rightRearWheel = RobotMap::chassisRightRearWheel;
 
 
 
 }
 
 void Chassis::InitDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // SetDefaultCommand(new MySpecialCommand());
+  // Set the default command for a subsystem here.
+  // SetDefaultCommand(new MySpecialCommand());
 	SetDefaultCommand(new MecanumDrive());
 }
 
@@ -31,5 +31,4 @@ void Chassis::SetTank(double leftSpeed, double rightSpeed)
 	leftRearWheel->Set(-leftSpeed);
 	rightFrontWheel->Set(-rightSpeed);
 	rightRearWheel->Set(-rightSpeed);
-
 }

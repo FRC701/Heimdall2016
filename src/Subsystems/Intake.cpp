@@ -5,28 +5,24 @@
 
 
 Intake::Intake() : Subsystem("Intake") {
-
-    actuator = RobotMap::intakeActuator;
-    leftSpinner = RobotMap::intakeLeftSpinner;
-    rightSpinner = RobotMap::intakeRightSpinner;
-
+  actuator = RobotMap::intakeActuator;
+  leftSpinner = RobotMap::intakeLeftSpinner;
+  rightSpinner = RobotMap::intakeRightSpinner;
 }
 
 void Intake::InitDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // SetDefaultCommand(new MySpecialCommand());
+  // Set the default command for a subsystem here.
+  // SetDefaultCommand(new MySpecialCommand());
 	SetDefaultCommand(new IntakeOn(0.0));
-
 }
 
 bool Intake::IsActuatorClosed() const {
 
-return actuator->Get() == static_cast<DoubleSolenoid::Value>(kActuatorClosed);
+  return actuator->Get() == static_cast<DoubleSolenoid::Value>(kActuatorClosed);
 
 }
 
 void Intake::SetActuator(ActuatorValue value){
-
 	actuator->Set(static_cast<DoubleSolenoid::Value>(value));
 }
 

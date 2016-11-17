@@ -1,4 +1,5 @@
 #include "SetHaySqueeze.h"
+#include "../Robot.h"
 
 SetHaySqueeze::SetHaySqueeze(Elevator::HaySqueezeValue value)
 : mValue(value)

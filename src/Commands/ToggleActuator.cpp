@@ -1,4 +1,5 @@
 #include "ToggleActuator.h"
+#include "../Robot.h"
 
 ToggleActuator::ToggleActuator()
 {

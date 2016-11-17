@@ -1,4 +1,5 @@
 #include "IntakeOn.h"
+#include "../Robot.h"
 
 IntakeOn::IntakeOn(double speed)
 : mSpeed(speed)

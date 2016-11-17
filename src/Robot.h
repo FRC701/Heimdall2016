@@ -17,10 +17,10 @@ public:
 	std::unique_ptr<Command> autonomousCommand;
 	static std::unique_ptr<OI> oi;
 	LiveWindow *lw = LiveWindow::GetInstance();
-    static std::shared_ptr<Elevator> elevator;
-    static std::shared_ptr<Chassis> chassis;
-    static std::shared_ptr<Intake> intake;
-    static std::shared_ptr<Lights> lights;
+  static std::shared_ptr<Elevator> elevator;
+  static std::shared_ptr<Chassis> chassis;
+  static std::shared_ptr<Intake> intake;
+  static std::shared_ptr<Lights> lights;
 
 
 	virtual void RobotInit();

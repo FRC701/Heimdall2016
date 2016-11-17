@@ -1,4 +1,5 @@
 #include "ToggleHaySqueeze.h"
+#include "../Robot.h"
 
 ToggleHaySqueeze::ToggleHaySqueeze()
 {
@@ -19,7 +20,7 @@ void ToggleHaySqueeze::Execute()
 {
 	Elevator::HaySqueezeValue value
 			= Robot::elevator->IsHaySqueezeOpen() ? Elevator::kClose : Elevator::kOpen;
-		Robot::elevator->SetHaySqueeze(value);
+  Robot::elevator->SetHaySqueeze(value);
 
 }
 

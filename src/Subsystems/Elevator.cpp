@@ -3,21 +3,21 @@
 #include "../Commands/ElevatorOn.h"
 
 Elevator::Elevator() : Subsystem("Elevator") {
-    haySqueeze = RobotMap::elevatorHaySqueeze;
-    rightHaySqueezeSensor = RobotMap::elevatorRightHaySqueezeSensor;
-    leftHaySqueezeSensor = RobotMap::elevatorLeftHaySqueezeSensor;
-    brake = RobotMap::elevatorBrake;
-    leftSpool = RobotMap::elevatorLeftSpool;
-    rightSpool = RobotMap::elevatorRightSpool;
+  haySqueeze = RobotMap::elevatorHaySqueeze;
+  rightHaySqueezeSensor = RobotMap::elevatorRightHaySqueezeSensor;
+  leftHaySqueezeSensor = RobotMap::elevatorLeftHaySqueezeSensor;
+  brake = RobotMap::elevatorBrake;
+  leftSpool = RobotMap::elevatorLeftSpool;
+  rightSpool = RobotMap::elevatorRightSpool;
 
 // already done in wiring //    rightSpool->SetInverted(true);
 
-    SetBrake(Elevator::kBrake);
+  SetBrake(Elevator::kBrake);
 }
 
 void Elevator::InitDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // SetDefaultCommand(new MySpecialCommand());
+  // Set the default command for a subsystem here.
+  // SetDefaultCommand(new MySpecialCommand());
 	SetDefaultCommand(new ElevatorOn(0.0));
 }
 

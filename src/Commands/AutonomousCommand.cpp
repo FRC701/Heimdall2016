@@ -12,8 +12,8 @@
 #include "AutonomousCommand.h"
 
 AutonomousCommand::AutonomousCommand(): Command() {
-        // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+  // Use requires() here to declare subsystem dependencies
+  // eg. requires(chassis);
 }
 // Called just before this Command runs the first time
 void AutonomousCommand::Initialize() {
@@ -27,7 +27,7 @@ void AutonomousCommand::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool AutonomousCommand::IsFinished() {
-    return false;
+  return false;
 }
 
 // Called once after isFinished returns true

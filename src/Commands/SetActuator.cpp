@@ -1,4 +1,5 @@
 #include "SetActuator.h"
+#include "../Robot.h"
 
 SetActuator::SetActuator(Intake::ActuatorValue value)
 : mValue(value)

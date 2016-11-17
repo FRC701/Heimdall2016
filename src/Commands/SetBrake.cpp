@@ -1,4 +1,5 @@
 #include "SetBrake.h"
+#include "../Robot.h"
 
 SetBrake::SetBrake(Elevator::BrakeValue value)
 : mValue(value)

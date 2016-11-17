@@ -1,8 +1,9 @@
 #include "MecanumDrive.h"
+#include "../Robot.h"
 
 MecanumDrive::MecanumDrive(): Command() {
-        // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+  // Use requires() here to declare subsystem dependencies
+  // eg. requires(chassis);
 
 	Requires(Robot::chassis.get());
 
@@ -17,7 +18,6 @@ void MecanumDrive::Initialize() {
 void MecanumDrive::Execute() {
 
 	Robot::chassis->SetTank(Robot::oi->getdriver()->GetRawAxis(1), Robot::oi->getdriver()->GetRawAxis(5));
-
 	/*MecanumDrive_Cartesian(Robot::oi->getdriver()->GetRawAxis(0),
 										   Robot::oi->getdriver()->GetRawAxis(1),
 										   Robot::oi->getdriver()->GetRawAxis(4),

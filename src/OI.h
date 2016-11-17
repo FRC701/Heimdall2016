@@ -1,7 +1,9 @@
 #ifndef OI_H
 #define OI_H
 
-#include "WPILib.h"
+//#include "WPILib.h"
+#include "Joystick.h"
+#include "Buttons/JoystickButton.h"
 
 class OI {
 private:

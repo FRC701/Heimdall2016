@@ -9,9 +9,9 @@ std::unique_ptr<OI> Robot::oi;
 void Robot::RobotInit() {
 	RobotMap::init();
 	elevator.reset(new Elevator());
-    chassis.reset(new Chassis());
-    intake.reset(new Intake());
-    lights.reset(new Lights());
+  chassis.reset(new Chassis());
+  intake.reset(new Intake());
+  lights.reset(new Lights());
 
 
 	// This MUST be here. If the OI creates Commands (which it very likely
@@ -25,7 +25,7 @@ void Robot::RobotInit() {
 
 	autonomousCommand.reset(new AutonomousCommand());
 
-	}
+}
 
 /**
  * This function is called when the disabled button is hit.

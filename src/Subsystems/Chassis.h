@@ -1,7 +1,10 @@
 #ifndef CHASSIS_H
 #define CHASSIS_H
 #include "Commands/Subsystem.h"
-#include "WPILib.h"
+#include "CANTalon.h"
+#include "DigitalInput.h"
+#include "RobotDrive.h"
+//#include "WPILib.h"
 
 /**
  *

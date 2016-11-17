@@ -1,4 +1,5 @@
 #include "ElevatorOn.h"
+#include "../Robot.h"
 
 ElevatorOn::ElevatorOn(double speed)
 : mSpeed(speed)

@@ -1,4 +1,5 @@
 #include "LightsOn.h"
+#include "../Robot.h"
 
 LightsOn::LightsOn(Lights::LightValue value)
 : mValue(value)
@@ -17,7 +18,7 @@ void LightsOn::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void LightsOn::Execute()
 {
-Robot::lights->LightOn(mValue);
+  Robot::lights->LightOn(mValue);
 }
 
 // Make this return true when this Command no longer needs to run execute()

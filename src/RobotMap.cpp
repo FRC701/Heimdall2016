@@ -24,82 +24,82 @@ std::shared_ptr<Relay> RobotMap::lightsRightUnderGlow;
 
 void RobotMap::init() {
 
-    LiveWindow *lw = LiveWindow::GetInstance();
+  LiveWindow *lw = LiveWindow::GetInstance();
 
 //..........Talons..........
 
-    //..........chassis..........
+  //..........chassis..........
 
-    chassisLeftFrontWheel.reset(new CANTalon(kLeftFrontID));
-    lw->AddActuator("Chassis", "LeftFrontWheel", chassisLeftFrontWheel);
+  chassisLeftFrontWheel.reset(new CANTalon(kLeftFrontID));
+  lw->AddActuator("Chassis", "LeftFrontWheel", chassisLeftFrontWheel);
 
-    chassisLeftRearWheel.reset(new CANTalon(kLeftRearID));
-    lw->AddActuator("Chassis", "leftRearWheel", chassisLeftRearWheel);
+  chassisLeftRearWheel.reset(new CANTalon(kLeftRearID));
+  lw->AddActuator("Chassis", "leftRearWheel", chassisLeftRearWheel);
 
-    chassisRightFrontWheel.reset(new CANTalon(kRightFrontID));
-    lw->AddActuator("Chassis", "rightFrontWheel", chassisRightFrontWheel);
+  chassisRightFrontWheel.reset(new CANTalon(kRightFrontID));
+  lw->AddActuator("Chassis", "rightFrontWheel", chassisRightFrontWheel);
 
-    chassisRightRearWheel.reset(new CANTalon(kRightRearID));
-    lw->AddActuator("Chassis", "rightRearWheel", chassisRightRearWheel);
+  chassisRightRearWheel.reset(new CANTalon(kRightRearID));
+  lw->AddActuator("Chassis", "rightRearWheel", chassisRightRearWheel);
 
-    //..........elevator..........
+  //..........elevator..........
 
-    elevatorLeftSpool.reset(new CANTalon(kLeftSpoolID));
-    lw->AddActuator("Elevator", "leftSpool", elevatorLeftSpool);
+  elevatorLeftSpool.reset(new CANTalon(kLeftSpoolID));
+  lw->AddActuator("Elevator", "leftSpool", elevatorLeftSpool);
 
-    elevatorRightSpool.reset(new CANTalon(kRightSpoolID));
-    lw->AddActuator("Elevator", "rightSpool", elevatorRightSpool);
+  elevatorRightSpool.reset(new CANTalon(kRightSpoolID));
+  lw->AddActuator("Elevator", "rightSpool", elevatorRightSpool);
 
-    //..........intake..........
+  //..........intake..........
 
-    intakeLeftSpinner.reset(new CANTalon(kLeftSpinnerID));
-    lw->AddActuator("Intake", "leftSpinner", intakeLeftSpinner);
+  intakeLeftSpinner.reset(new CANTalon(kLeftSpinnerID));
+  lw->AddActuator("Intake", "leftSpinner", intakeLeftSpinner);
 
-    intakeRightSpinner.reset(new CANTalon(kRightSpinnerID));
-    lw->AddActuator("Intake", "rightSpinner", intakeRightSpinner);
+  intakeRightSpinner.reset(new CANTalon(kRightSpinnerID));
+  lw->AddActuator("Intake", "rightSpinner", intakeRightSpinner);
 
 //..........solenoids..........
 
-    //..........elevator..........
+  //..........elevator..........
 
-    elevatorHaySqueeze.reset(new DoubleSolenoid(kPCM_ID, kHaySqueezeF, kHaySqueezeR));
-    lw->AddActuator("Elevator", "haySqueeze", elevatorHaySqueeze);
+  elevatorHaySqueeze.reset(new DoubleSolenoid(kPCM_ID, kHaySqueezeF, kHaySqueezeR));
+  lw->AddActuator("Elevator", "haySqueeze", elevatorHaySqueeze);
 
-    elevatorBrake.reset(new DoubleSolenoid(kPCM_ID, kBrakeF, kBrakeR));
-    lw->AddActuator("Elevator", "brake", elevatorBrake);
+  elevatorBrake.reset(new DoubleSolenoid(kPCM_ID, kBrakeF, kBrakeR));
+  lw->AddActuator("Elevator", "brake", elevatorBrake);
 
-    //..........intake..........
+  //..........intake..........
 
-    intakeActuator.reset(new DoubleSolenoid(kPCM_ID, kActuatorF, kActuatorR));
-    lw->AddActuator("Intake", "actuator", intakeActuator);
+  intakeActuator.reset(new DoubleSolenoid(kPCM_ID, kActuatorF, kActuatorR));
+  lw->AddActuator("Intake", "actuator", intakeActuator);
 
 //..........sensors..........
-    
-    //..........elevators..........
 
-    elevatorRightHaySqueezeSensor.reset(new DigitalInput(kRightHaySqueezeSensorID));
-    lw->AddSensor("Elevator", "rightHaySqueezeSensor", elevatorRightHaySqueezeSensor);
-    
-    elevatorLeftHaySqueezeSensor.reset(new DigitalInput(kLeftHaySqueezeSensorID));
-    lw->AddSensor("Elevator", "leftHaySqueezeSensor", elevatorLeftHaySqueezeSensor);
-    
-    //..........chassis..........
-    
-    chassisLeftLightSensor.reset(new DigitalInput(kLeftLightSensorID));
-    lw->AddSensor("Chassis", "leftLightSensor", chassisLeftLightSensor);
-    
-    chassisRightLightSensor.reset(new DigitalInput(kRightLightSensorID));
-    lw->AddSensor("Chassis", "rightLightSensor", chassisRightLightSensor);
-    
+  //..........elevators..........
+
+  elevatorRightHaySqueezeSensor.reset(new DigitalInput(kRightHaySqueezeSensorID));
+  lw->AddSensor("Elevator", "rightHaySqueezeSensor", elevatorRightHaySqueezeSensor);
+
+  elevatorLeftHaySqueezeSensor.reset(new DigitalInput(kLeftHaySqueezeSensorID));
+  lw->AddSensor("Elevator", "leftHaySqueezeSensor", elevatorLeftHaySqueezeSensor);
+
+  //..........chassis..........
+
+  chassisLeftLightSensor.reset(new DigitalInput(kLeftLightSensorID));
+  lw->AddSensor("Chassis", "leftLightSensor", chassisLeftLightSensor);
+
+  chassisRightLightSensor.reset(new DigitalInput(kRightLightSensorID));
+  lw->AddSensor("Chassis", "rightLightSensor", chassisRightLightSensor);
+
 //..........lights..........
 
-    lightsHeimdallGlow.reset(new Relay(kHeimdallGlowID));
-    lw->AddActuator("Lights", "heimdallGlow", lightsHeimdallGlow);
-    
-    lightsLeftUnderGlow.reset(new Relay(kLeftLightID));
-    lw->AddActuator("Lights", "leftUnderGlow", lightsLeftUnderGlow);
-    
-    lightsRightUnderGlow.reset(new Relay(kRightLightID));
-    lw->AddActuator("Lights", "rightUnderGlow", lightsRightUnderGlow);
-    
+  lightsHeimdallGlow.reset(new Relay(kHeimdallGlowID));
+  lw->AddActuator("Lights", "heimdallGlow", lightsHeimdallGlow);
+
+  lightsLeftUnderGlow.reset(new Relay(kLeftLightID));
+  lw->AddActuator("Lights", "leftUnderGlow", lightsLeftUnderGlow);
+
+  lightsRightUnderGlow.reset(new Relay(kRightLightID));
+  lw->AddActuator("Lights", "rightUnderGlow", lightsRightUnderGlow);
+
 }

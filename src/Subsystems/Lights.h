@@ -1,7 +1,9 @@
 #ifndef LIGHTS_H
 #define LIGHTS_H
 #include "Commands/Subsystem.h"
-#include "WPILib.h"
+#include "Relay.h"
+#include "DoubleSolenoid.h"
+//#include "WPILib.h"
 
 /**
  *
