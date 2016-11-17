@@ -3,6 +3,7 @@
 
 #include "Commands/Command.h"
 #include "../Robot.h"
+#include "Subsystems/Lights.h"
 
 class LightsOn: public Command
 {
