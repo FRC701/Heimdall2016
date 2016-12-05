@@ -1,43 +1,42 @@
-#include "HaySqueezeOpenClose.h"
+#include "ToggleBrake.h"
 #include "../Robot.h"
 
-HaySqueezeOpenClose::HaySqueezeOpenClose()
+ToggleBrake::ToggleBrake()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::elevator.get());
 }
 
 // Called just before this Command runs the first time
-void HaySqueezeOpenClose::Initialize()
+void ToggleBrake::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void HaySqueezeOpenClose::Execute()
+void ToggleBrake::Execute()
 {
-	if(Robot::elevator->GetHaySqueeze() == DoubleSolenoid::kForward)
-			Robot::elevator->SetHaySqueeze(DoubleSolenoid::kReverse);
-		else
-			Robot::elevator->SetHaySqueeze(DoubleSolenoid::kForward);
-
+	Elevator::BrakeValue value
+			= Robot::elevator->IsBrakeOn() ? Elevator::kBrakeOff : Elevator::kBrake;
+  Robot::elevator->SetBrake(value);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool HaySqueezeOpenClose::IsFinished()
+bool ToggleBrake::IsFinished()
 {
-	return false;
+	return true;
 }
 
 // Called once after isFinished returns true
-void HaySqueezeOpenClose::End()
+void ToggleBrake::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void HaySqueezeOpenClose::Interrupted()
+void ToggleBrake::Interrupted()
 {
 
 }

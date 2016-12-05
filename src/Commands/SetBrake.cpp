@@ -1,40 +1,41 @@
-#include "IntakeOut.h"
+#include "SetBrake.h"
 #include "../Robot.h"
 
-IntakeOut::IntakeOut()
+SetBrake::SetBrake(Elevator::BrakeValue value)
+: mValue(value)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::elevator.get());
 }
 
 // Called just before this Command runs the first time
-void IntakeOut::Initialize()
+void SetBrake::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void IntakeOut::Execute()
+void SetBrake::Execute()
 {
-	Robot::intake->leftSpinner->Set(0.5);
-	Robot::intake->rightSpinner->Set(0.5);
+	Robot::elevator->SetBrake(mValue);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool IntakeOut::IsFinished()
+bool SetBrake::IsFinished()
 {
-	return false;
+	return true;
 }
 
 // Called once after isFinished returns true
-void IntakeOut::End()
+void SetBrake::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void IntakeOut::Interrupted()
+void SetBrake::Interrupted()
 {
 
 }

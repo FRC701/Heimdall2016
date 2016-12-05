@@ -1,38 +1,41 @@
-#include "ElevatorDown.h"
+#include "SetActuator.h"
+#include "../Robot.h"
 
-ElevatorDown::ElevatorDown()
+SetActuator::SetActuator(Intake::ActuatorValue value)
+: mValue(value)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::intake.get());
 }
 
 // Called just before this Command runs the first time
-void ElevatorDown::Initialize()
+void SetActuator::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void ElevatorDown::Execute()
+void SetActuator::Execute()
 {
-	Robot::elevator->SetSpool(-0.5, -0.5);
+	Robot::intake->SetActuator(mValue);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool ElevatorDown::IsFinished()
+bool SetActuator::IsFinished()
 {
-	return false;
+	return true;
 }
 
 // Called once after isFinished returns true
-void ElevatorDown::End()
+void SetActuator::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void ElevatorDown::Interrupted()
+void SetActuator::Interrupted()
 {
 
 }

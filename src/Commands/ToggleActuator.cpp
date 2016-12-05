@@ -1,49 +1,43 @@
-#include "IntakeOpenClose.h"
+#include "ToggleActuator.h"
+#include "../Robot.h"
 
-IntakeOpenClose::IntakeOpenClose()
+ToggleActuator::ToggleActuator()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::intake.get());
 }
 
 // Called just before this Command runs the first time
-void IntakeOpenClose::Initialize()
+void ToggleActuator::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void IntakeOpenClose::Execute()
+void ToggleActuator::Execute()
 {
+	Intake::ActuatorValue value
+		= Robot::intake->IsActuatorClosed() ?  Intake::kActuatorOpen : Intake::kActuatorClosed;
+	Robot::intake->SetActuator(value);
 
-	if(Robot::intake->actuator->Get() == DoubleSolenoid::kForward)
-	{
-		Robot::intake->actuator->Set(DoubleSolenoid::kReverse);
-
-	}
-
-	else
-	{
-		Robot::intake->actuator->Set(DoubleSolenoid::kForward);
-
-	}
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool IntakeOpenClose::IsFinished()
+bool ToggleActuator::IsFinished()
 {
-	return false;
+	return true;
 }
 
 // Called once after isFinished returns true
-void IntakeOpenClose::End()
+void ToggleActuator::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void IntakeOpenClose::Interrupted()
+void ToggleActuator::Interrupted()
 {
 
 }

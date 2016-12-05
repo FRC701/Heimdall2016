@@ -1,40 +1,42 @@
-#include "ElevatorUp.h"
+#include "IntakeOn.h"
 #include "../Robot.h"
 
-ElevatorUp::ElevatorUp()
+IntakeOn::IntakeOn(double speed)
+: mSpeed(speed)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
+	Requires(Robot::intake.get());
 }
 
 // Called just before this Command runs the first time
-void ElevatorUp::Initialize()
+void IntakeOn::Initialize()
 {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void ElevatorUp::Execute()
+void IntakeOn::Execute()
 {
-	Robot::elevator->SetSpool(0.5, 0.5);
+	//TODO set this to a axis of some point
+	Robot::intake->SetIntake(mSpeed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool ElevatorUp::IsFinished()
+bool IntakeOn::IsFinished()
 {
 	return false;
 }
 
 // Called once after isFinished returns true
-void ElevatorUp::End()
+void IntakeOn::End()
 {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void ElevatorUp::Interrupted()
+void IntakeOn::Interrupted()
 {
 
 }
-
